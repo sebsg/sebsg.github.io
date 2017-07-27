@@ -3,10 +3,10 @@
     <title>Multi iframes checkout</title>
 
 <form name="addr1.1" id="form1" action="https://example.com/" method="post">
-  <iframe src="/autofill/embedded-cc-name.html">
-  <iframe src="/autofill/embedded-cc-num.html">
-  <iframe src="/autofill/embedded-cc-exp.html">
-  <iframe src="/autofill/embedded-cc-cvc.html">
+  <iframe id="cc-name" src="/autofill/embedded-cc-name.html"></iframe>
+  <iframe id="cc-num" src="/autofill/embedded-cc-num.html"></iframe>
+  <iframe id="cc-exp" src="/autofill/embedded-cc-exp.html"></iframe>
+  <iframe id="cc-cvc" src="/autofill/embedded-cc-cvc.html"></iframe>
   <br>
   <input type="reset" value="Reset">
   <input type="submit" value="Submit">
