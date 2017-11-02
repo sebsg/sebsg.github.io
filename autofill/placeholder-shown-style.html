@@ -1,0 +1,31 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Placeholder Shown Style Test</title>
+<style>
+  :placeholder-shown {
+    box-shadow: 0px 0px 5px 5px rgba(255,0,255,1);
+  }
+</style>
+<h3>Profile Autofill</h3>
+
+<form name="addr1.1" id="form1" action="https://example.com/" method="post">
+  Name: <input type="text" name="name" placeholder=foo><br>
+  Address: <input type="text" name="address"><br>
+  City: <input type="text" name="city" placeholder="city" value="Springfield"><br>
+  State: <select name="state">
+    <option value="CA">CA</option>
+    <option value="MA">MA</option>
+    <option value="NY">NY</option>
+    <option value="MD">MD</option>
+    <option value="OR">OR</option>
+    <option value="OH">OH</option>
+    <option value="IL">IL</option>
+    <option value="DC">DC</option>
+  </select> <br>
+  Zip: <input name="zip" id="form_zip"> <br>
+  Country: <input name="country" id="form_country"> <br>
+  Email: <input name="email" id="form_email"> <br>
+  <input type="reset" value="Reset">
+  <input type="submit" value="Submit">
+</form>
+</body></html>
