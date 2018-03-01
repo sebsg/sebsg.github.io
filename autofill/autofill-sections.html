@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <title>Autofill Sections Test</title>
+
+    <script>
+      var FlipRTL = function() {
+        var html = document.getElementsByTagName('html')[0];
+        if (html.getAttribute("dir") == "rtl") {
+          html.setAttribute("dir", "ltr");
+        } else {
+          html.setAttribute("dir", "rtl");
+        }
+      }
+
+      var changeVisibility = function(checkbox, targetId) {
+        document.getElementById(targetId).style.display = checkbox.checked ? 'none' : 'block';
+      }
+    </script>
+    <style>
+      .fork {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 0;
+      }
+    </style>
+  </head>
+  <body>
+  <em>Beware what you post, all the forms send data to https://example.com.</em>
+  <br><br>
+
+  <h3>Shipping and Billing - different names</h3>
+
+  <form name="addresses1" id="addresses1" action="https://example.com/" method="post">
+    <div id='billing1'>
+      <h2>Billing Address</h2>
+      Name: <input type="text" name="name"><br>
+      Address: <input type="text" name="address"><br>
+      City: <input type="text" name="city"><br>
+      State: <select name="state">
+        <option value="CA">CA</option>
+        <option value="MA">MA</option>
+        <option value="NY">NY</option>
+        <option value="MD">MD</option>
+        <option value="OR">OR</option>
+        <option value="OH">OH</option>
+        <option value="IL">IL</option>
+        <option value="DC">DC</option>
+      </select> <br>
+      Zip: <input name="zip"> <br>
+      Country: <input name="country"> <br>
+      Email: <input name="email"> <br>
+    </div>
+    Ship to the same address: <input name="same" type="checkbox" checked="checked" onchange="changeVisibility(this, 'shipping1')">
+    <div id='shipping1' style="display: none;">
+      <h2>Shipping Address</h2>
+      Name: <input type="text" name="s_name"><br>
+      Address: <input type="text" name="s_address"><br>
+      City: <input type="text" name="s_city"><br>
+      State: <select name="s_state">
+        <option value="CA">CA</option>
+        <option value="MA">MA</option>
+        <option value="NY">NY</option>
+        <option value="MD">MD</option>
+        <option value="OR">OR</option>
+        <option value="OH">OH</option>
+        <option value="IL">IL</option>
+        <option value="DC">DC</option>
+      </select> <br>
+      Zip: <input name="s_zip"> <br>
+      Country: <input name="s_country"> <br>
+      Email: <input name="s_email"> <br>
+    </div>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+
+  <hr>
+  <button type="button" onclick="FlipRTL()">RTL &lt;-&gt; LTR</button>
+
+</body></html>
