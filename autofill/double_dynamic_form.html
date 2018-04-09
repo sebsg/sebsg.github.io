@@ -29,10 +29,6 @@
 
 <script src="dynamic_form_utils.js"></script>
 <script>
-
-var refilled = false;
-var callback_c = false;
-
 function CountryChanged() {
   DynamicallyChangeForm();
 
@@ -45,20 +41,6 @@ function CountryChanged() {
     new_form2.setAttribute('id', "form2");
 
     document.getElementsByTagName('body')[0].appendChild(new_form2);
-
-    if (callback_c)
-      window.domAutomationController.send(document.getElementById("firstname").value != '');
-
   });
 }
-
-function hasFinished() {
-  var first_name_input = document.getElementById("firstname");
-  if (refilled) {
-    window.domAutomationController.send(document.getElementById("firstname").value != '');
-  } else {
-    callback_c = true;
-  }
-}
-
 </script>
