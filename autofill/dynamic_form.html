@@ -29,22 +29,7 @@
 
 <script src="dynamic_form_utils.js"></script>
 <script>
-var filled = false;
-
 function CountryChanged() {
   DynamicallyChangeForm();
-  filled = true;
 }
-
-function hasRefilled() {
-  var first_name_input = document.getElementById("firstname");
-  if (!filled || first_name_input.value == '') {
-    first_name_input.onchange = function() {
-      window.domAutomationController.send(document.getElementById("firstname").value != '');
-    }
-  } else {
-    window.domAutomationController.send(document.getElementById("firstname").value != '');
-  }
-}
-
 </script>
