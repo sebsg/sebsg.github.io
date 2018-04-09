@@ -29,8 +29,6 @@
 
 <script src="dynamic_form_utils.js"></script>
 <script>
-var filled = false;
-
 function sleep (time) {
   return new Promise((resolve) => setTimeout(resolve, time));
 }
@@ -38,15 +36,6 @@ function sleep (time) {
 function CountryChanged() {
   sleep(2000).then(() => {
     DynamicallyChangeForm();
-    filled = true;
-
-    // Give time to see if it fills.
-    setTimeout(function() {
-      window.domAutomationController.send(document.getElementById("firstname").value != '');
-    }, 1000);});
+  });
 }
-
-// The callback will happen after the dynamic change.
-function hasFinished() {}
-
 </script>
