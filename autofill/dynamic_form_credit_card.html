@@ -98,15 +98,5 @@ function ExpChanged() {
   new_form.appendChild(i);
 
   document.getElementsByTagName('body')[0].appendChild(new_form);
-
-  filled = true;
-
-  // Give time to see if it fills.
-  setTimeout(function() {
-    window.domAutomationController.send(document.getElementById("cc-name").value != '');
-  }, 1000);
 }
-
-// The callback will happen after the dynamic change
-function hasRefilled() {}
 </script>
