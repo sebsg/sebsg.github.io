@@ -31,8 +31,6 @@
 
 <script src="dynamic_form_utils.js"></script>
 <script>
-var filled = false;
-
 function CountryChanged() {
   RemoveForm("form1");
   var new_form = AddNewFormAndFields();
@@ -41,18 +39,5 @@ function CountryChanged() {
   new_form.elements[6].setAttribute('autocomplete', 'tel-national');
 
   document.getElementsByTagName('body')[0].appendChild(new_form);
-  filled = true;
 }
-
-function hasRefilled() {
-  var first_name_input = document.getElementById("firstname");
-  if (!filled || first_name_input.value == '') {
-    first_name_input.onchange = function() {
-      window.domAutomationController.send(document.getElementById("firstname").value != '');
-    }
-  } else {
-    window.domAutomationController.send(document.getElementById("firstname").value != '');
-  }
-}
-
 </script>
