@@ -47,6 +47,7 @@ function AddNewFormAndFields() {
   i.options[0] = new Option('CA', 'CA');
   i.options[1] = new Option('MA', 'MA');
   i.options[2] = new Option('TX', 'TX');
+  i.options[3] = new Option('DC', 'DC');
   new_form.appendChild(i);
 
   i = document.createElement('input');
