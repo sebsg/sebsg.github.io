@@ -56,6 +56,13 @@ function AddNewFormAndFields() {
   i.setAttribute('id', 'city');
   i.setAttribute('autocomplete', 'locality');
   new_form.appendChild(i);
+  
+  i = document.createElement('input');
+  i.setAttribute('type', 'text');
+  i.setAttribute('name', 'zip');
+  i.setAttribute('id', 'zip');
+  i.setAttribute('autocomplete', 'postal-code');
+  new_form.appendChild(i);
 
   i = document.createElement('input');
   i.setAttribute('type', 'text');
