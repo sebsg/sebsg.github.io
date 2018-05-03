@@ -23,6 +23,10 @@
 </body>
 
 <script>
+function sleep (time) {
+  return new Promise((resolve) => setTimeout(resolve, time));
+}
+  
 function CountryChanged() {
   // Get the select object.
   var state_select = document.getElementById("state");
