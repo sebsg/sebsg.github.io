@@ -44,15 +44,17 @@ function CountryChanged() {
 
   // Add event lister for state change.
   state_select.addEventListener('change', function(){
-    // Re-change the select options.
-    for (var i=0; i<state_select.length; i++) {
-       state_select.remove(i);
-    }
-    state_select.options[0] = new Option('ON', 'ON');
-    state_select.options[1] = new Option('AL', 'AL');
-    state_select.options[2] = new Option('QC', 'QC');
-    state_select.options[3] = new Option('NB', 'NB');
-    document.getElementById("address1").value = '';
+    sleep(500).then(() => {
+      // Re-change the select options.
+      for (var i=0; i<state_select.length; i++) {
+         state_select.remove(i);
+      }
+      state_select.options[0] = new Option('ON', 'ON');
+      state_select.options[1] = new Option('AL', 'AL');
+      state_select.options[2] = new Option('QC', 'QC');
+      state_select.options[3] = new Option('NB', 'NB');
+      document.getElementById("address1").value = '';
+    });
   });
 }
 </script>
