@@ -86,6 +86,9 @@
 	  form['password'].value = 'ILoveGeorgeBush';
       }
 
+    function ShowPhoneNumber() {
+      document.getElementById('form_phone_container').style.display = 'block';
+    }
     </script>
     <style>
       .fork {
@@ -119,8 +122,12 @@
   Zip: <input name="zip" id="form_zip"> <br>
   Country: <input name="country" id="form_country"> <br>
   Email: <input name="email" id="form_email"> <br>
+  <div id="form_phone_container" style="display: none;">
+    Phone: <input name="phone" id="form_phone"> <br>
+  </div>
   <input type="reset" value="Reset">
   <input type="submit" value="Submit">
+  <button type="button" onclick="ShowPhoneNumber()">Show phone number</button>
 </form>
 
 <button type="button" onclick="FillFormSimpsons()">Fill Form (Simpsons)</button>
