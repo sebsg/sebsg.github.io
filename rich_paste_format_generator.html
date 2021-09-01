@@ -29,11 +29,16 @@ Copy to clipboard</button>
 </html> 
 
 <script>
+function convertToPlain(rtf) {
+    rtf = rtf.replace(/\\par[d]?/g, "");
+    return rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "").trim();
+}
+  
 function copyToClipboard() {
   var notes = document.getElementById('notes').innerHTML;
   function listener(e) {
     e.clipboardData.setData("text/html", notes);
-    e.clipboardData.setData("text/plain", notes);
+    e.clipboardData.setData("text/plain", convertToPlain(notes));
     e.preventDefault();
   }
   document.addEventListener("copy", listener);
