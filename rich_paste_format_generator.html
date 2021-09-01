@@ -28,16 +28,15 @@ Copy to clipboard</button>
 </html> 
 
 <script>
-function convertToPlain(rtf) {
-    rtf = rtf.replace(/\\par[d]?/g, "");
-    return rtf.replace(/\{\*?\\[^{}]+}|[{}]|\\\n?[A-Za-z]+\n?(?:-?\d+)?[ ]?/g, "").trim();
+function getPlainTextVersion() {
+    return "Here are some notes I wanted to share:\n\"It emerged in Quebec, Canada, in the late 1950s in the Centre-du-Québec region\"\n- Drummundville FTW!\n\nhttps://en.wikipedia.org/wiki/Poutine#:~:text=It%20emerged%20in%20Quebec%2C%20Canada%2C%20in%20the%20late%201950s%20in%20the%20Centre-du-Qu%C3%A9bec%20region";
 }
   
 function copyToClipboard() {
   var notes = document.getElementById('notes').innerHTML;
   function listener(e) {
     e.clipboardData.setData("text/html", notes);
-    e.clipboardData.setData("text/plain", convertToPlain(notes));
+    e.clipboardData.setData("text/plain", getPlainTextVersion());
     e.preventDefault();
   }
   document.addEventListener("copy", listener);
