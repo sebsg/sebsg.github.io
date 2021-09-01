@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Rich Paste Format Generator</h1>
+<h2>This button will copy a set of notes and links in rich and plain formats to the clipboard</h2>
+  
+<div id=notes>
+Here are some notes I wanted to share:
+"It emerged in Quebec, Canada, in the late 1950s in the Centre-du-Québec region"
+- Drummundville FTW!
+  
+"leading some to suggest that poutine has emerged as a new dish classification in its own right"
+- Damn right!
+
+<a href="https://en.wikipedia.org/wiki/Poutine#:~:text=It%20emerged%20in%20Quebec%2C%20Canada%2C%20in%20the%20late%201950s%20in%20the%20Centre-du-Qu%C3%A9bec%20region">https://en.wikipedia.org/wiki/Poutine</a>
+</div>
+
+<button type="button"
+onclick="copyToClipboard()">
+Copy to clipboard</button>
+
+</body>
+</html> 
+
+<button onclick="copyToClip()">
+  Copy the stuff
+  </button>
+  
+<div id=foo style="display:none">
+  This is some data that is not visible. 
+  You can write some JS to generate this data. 
+  It can contain rich stuff.  <b> test </b> me <i> also </i>
+  <span style="font: 12px consolas; color: green;">Hello world</span> 
+  You can use setData to put TWO COPIES into the same clipboard, 
+  one that is plain and one that is rich. 
+  That way your users can paste into either a
+  <ul>
+    <li>plain text editor</li>
+    <li>or into a rich text editor</li>
+  </ul>
+</div>
+
+<script>
+function copyToClipboard() {
+  var notes = document.getElementById('notes').innerHTML;
+  function listener(e) {
+    e.clipboardData.setData("text/html", notes);
+    e.clipboardData.setData("text/plain", notes);
+    e.preventDefault();
+  }
+  document.addEventListener("copy", listener);
+  document.execCommand("copy");
+  document.removeEventListener("copy", listener);
+};
+</script>
