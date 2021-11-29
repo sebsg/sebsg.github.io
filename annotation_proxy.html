@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared Note</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="manifest" href="/manifest.json">
+</head>
+  
+<body>
+<h3>The creator of this link sent you the following note(s) about the following side <id=site></h3>
+  <div id="notes"></div>
+  
+  
+<script>
+// self executing function here
+(function() {
+  var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+  if(isChrome) {
+    var noteIndex = window.location.href.indexOf(":~:note=");
+    var note = window.location.href.substring(noteIndex + 8);
+    document.getElementById("notes").innerHTML = note;
+  } else {
+    window.location.replace(window.location.href.substring(window.location.href.indexOf("?page=") + 6));
+  }
+})();
+</script>
+</body>
+</html>
