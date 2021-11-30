@@ -10,7 +10,7 @@
 </head>
   
 <body>
-<h3>The creator of this link sent you the following note(s) about the following site <a id=site></h3>
+<h3>The creator of this link sent you the following note(s) about the following site <a id=site></a></h3>
   <div id="notes"></div>
   
   
@@ -18,10 +18,13 @@
 // self executing function here
 (function() {
   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-  if(isChrome) {
+  if (true) {
+    console.log(window.location.href);
     var noteIndex = window.location.href.indexOf(":~:note=");
     var note = window.location.href.substring(noteIndex + 8);
     document.getElementById("notes").innerHTML = note;
+    var urlIndex = window.location.href.indexOf("?page=");
+    document.getElementById("site").innerHTML = window.location.href.substring(urlIndex + 6, noteIndex - 1);
   } else {
     window.location.replace(window.location.href.substring(window.location.href.indexOf("?page=") + 6));
   }
