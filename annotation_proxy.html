@@ -24,7 +24,9 @@
     var note = window.location.href.substring(noteIndex + 8);
     document.getElementById("notes").innerHTML = note;
     var urlIndex = window.location.href.indexOf("?page=");
-    document.getElementById("site").innerHTML = window.location.href.substring(urlIndex + 6, noteIndex - 1);
+    var targetURL = window.location.href.substring(urlIndex + 6, noteIndex - 1);;
+    document.getElementById("site").innerHTML = targetURL;
+    document.getElementById("site").href = targetURL;
   } else {
     window.location.replace(window.location.href.substring(window.location.href.indexOf("?page=") + 6));
   }
