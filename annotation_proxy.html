@@ -19,12 +19,16 @@
 (function() {
   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
   if (true) {
-    console.log(window.location.href);
-    var noteIndex = window.location.href.indexOf(":~:note=");
-    var note = window.location.href.substring(noteIndex + 8);
+    var fragDir = document.fragmentDirectives;
+    var fragDir2 = document.fragmentDirectives.items;
+    const entries = performance.getEntriesByType("navigation")
+    const entry = entries[0].name;
+    console.log(entry);
+    var noteIndex = entry.indexOf(":~:note=");
+    var note = entry.substring(noteIndex + 8);
     document.getElementById("notes").innerHTML = note;
-    var urlIndex = window.location.href.indexOf("?page=");
-    var targetURL = window.location.href.substring(urlIndex + 6, noteIndex - 1);;
+    var urlIndex = entry.indexOf("?page=");
+    var targetURL = entry.substring(urlIndex + 6, noteIndex - 1);;
     document.getElementById("site").innerHTML = targetURL;
     document.getElementById("site").href = targetURL;
   } else {
