@@ -19,8 +19,6 @@
 (function() {
   var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
   if (true) {
-    var fragDir = document.fragmentDirectives;
-    var fragDir2 = document.fragmentDirectives.items;
     const entries = performance.getEntriesByType("navigation")
     const entry = entries[0].name;
     console.log(entry);
