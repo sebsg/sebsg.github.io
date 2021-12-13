@@ -24,7 +24,7 @@
     console.log(entry);
     var noteIndex = entry.indexOf(":~:note=");
     var note = entry.substring(noteIndex + 8);
-    document.getElementById("notes").innerHTML = note;
+    document.getElementById("notes").innerHTML = "Note 1: " + note;
     var urlIndex = entry.indexOf("?page=");
     var targetURL = entry.substring(urlIndex + 6, noteIndex - 1);;
     document.getElementById("site").innerHTML = targetURL;
