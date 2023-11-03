@@ -1,0 +1,10 @@
+<html>
+<body>
+    <input type="text" name="firstname" id="firstname" autocomplete="given-name" autofocus>
+</body>
+<script>
+    document.addEventListener("focus", (e) => {
+console.log("focus of " + e.target.id + " was trusted? " + e.isTrusted);
+}, true);	
+</script>
+</html>
